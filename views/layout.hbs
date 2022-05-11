@@ -11,11 +11,15 @@
 
   <body>
       <nav>
-
         <a href="/">Home</a>
+        <form action="/auth/logout" method="POST">
+        <button>CERRAR SESSION</button>
+        </form>
+        {{#if userActive}}
+        {{else}}
         <a href="/auth/signup">Registrar</a>
-        {{!-- <a href="/auth/signup">Registrar</a> --}}
-
+        <a href="/auth/login">Login</a>
+        {{/if}}
       </nav>
     {{{body}}}
 
