@@ -12,13 +12,15 @@
   <body>
       <nav>
         <a href="/">Home</a>
-        <form action="/auth/logout" method="POST">
-        <button>CERRAR SESSION</button>
-        </form>
         {{#if userActive}}
+          <form action="/auth/logout" method="POST">
+            <button>CERRAR SESSION</button>
+          </form>
+          <a href="/main/cat">Gatete</a>
+          <a href="/private">Private Zone</a>
         {{else}}
-        <a href="/auth/signup">Registrar</a>
-        <a href="/auth/login">Login</a>
+          <a href="/auth/signup">Registrar</a>
+          <a href="/auth/login">Login</a>
         {{/if}}
       </nav>
     {{{body}}}

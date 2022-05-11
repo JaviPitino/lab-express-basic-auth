@@ -76,7 +76,7 @@ router.post("/login", async (req, res, next) => {
     }
 
     req.session.user = findUser;
-    // req.app.locals.userActive = true;
+    req.app.locals.userActive = true;
 
     res.redirect("/profile");
   } catch (err) {
@@ -86,7 +86,7 @@ router.post("/login", async (req, res, next) => {
 
 router.post("/logout", async (req, res, next) => {
   await req.session.destroy();
-  //   req.app.locals.userActive = false;
+  req.app.locals.userActive = false;
   res.redirect("/auth/login");
 });
 
